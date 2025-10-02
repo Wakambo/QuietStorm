@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiet Storm | Strategic Fundraising & Carbon Advisory</title>
+    <meta name="description" content="Strategic Fundraising and Carbon Advisory for Mission-Driven Organisations. Leverage $30M+ experience to drive high-impact solutions.">
+    
+    <!-- Google Fonts: Playfair Display for headings, Open Sans for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- === CSS STYLES START HERE (formerly style.css) === -->
+    <style>
+        /* --- Branding Variables & Reset --- */
+        :root {
+            --primary-green: #0D3B2E; /* Deep Green */
+            --accent-gold: #D4AF37;   /* Gold */
+            --off-white: #FAF9F6;     /* Background */
+            --text-dark: #222222;
+
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: var(--off-white);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Utility Classes --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* --- Typography --- */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primary-green);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        h3 { font-size: clamp(1.4rem, 3vw, 2rem); }
+
+        p { margin-bottom: 1rem; }
+
+        /* --- Buttons and CTAs --- */
+        .cta-button {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            margin: 0.5rem 0.75rem 0.5rem 0;
+            border: 2px solid transparent;
+            border-radius: 8px; /* Rounded corners on all elements */
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-primary {
+            background-color: var(--accent-gold);
+            color: var(--primary-green);
+        }
+
+        .cta-secondary {
+            background-color: var(--primary-green);
+            color: var(--off-white);
+            border-color: var(--primary-green);
+        }
+
+        .cta-primary:hover {
+            background-color: #c09a30;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-secondary:hover {
+            background-color: transparent;
+            color: var(--primary-green);
+            border-color: var(--primary-green);
+        }
+
+        /* --- Navigation Bar --- */
+        .header-nav {
+            background-color: var(--primary-green);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            color: var(--off-white);
+            font-size: 1.8rem;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .nav-menu a {
+            color: var(--off-white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- Section: Home Hero --- */
+        #home {
+            background: linear-gradient(rgba(13, 59, 46, 0.9), rgba(13, 59, 46, 0.95)),
+                        url('https://placehold.co/1200x600/0D3B2E/FAF9F6?text=High-Impact+African+Project') no-repeat center center/cover;
+            color: var(--off-white);
+            padding: 10rem 0;
+            text-align: center;
+        }
+
+        #home h1 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        #home .sub-headline {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+        }
+
+        /* Impact Snapshot */
+        .impact-snapshot {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+            gap: 2rem;
+        }
+
+        .impact-item {
+            padding: 1rem;
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .impact-item strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+        }
+
+        .impact-item span {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        /* Partner Logos */
+        .partner-logos {
+            padding: 3rem 0;
+            text-align: center;
+            background-color: #f0f0eb;
+        }
+
+        .partner-logos p {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-group img {
+            height: 35px; /* Mobile size */
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: all 0.3s;
+        }
+
+        .logo-group img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        /* --- Section: About Us --- */
+        #about {
+            background-color: var(--off-white);
+        }
+
+        #about .content-grid {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .founder-photo {
+            flex: 1;
+            max-width: 350px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text .title-gold {
+            color: var(--accent-gold);
+            font-family: var(--font-body);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .mission-statement {
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 1rem;
+            margin: 2rem 0;
+        }
+
+
+        /* --- Section: Services --- */
+        #services {
+            background-color: var(--primary-green);
+            color: var(--off-white);
+        }
+
+        #services h2, #services h3 {
+            color: var(--off-white);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            border-radius: 10px;
+            border-top: 5px solid var(--accent-gold);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .service-card ul li:before {
+            content: '✓';
+            color: var(--accent-gold);
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+        }
+
+        /* --- Section: Impact & Clients --- */
+        .case-study-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .case-study {
+            background-color: #f7f7f3;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+        }
+
+        .case-study .client-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .case-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .case-detail-box h4 {
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .results-box {
+            background-color: var(--primary-green);
+            color: var(--off-white);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .results-box strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .testimonial {
+            background-color: var(--primary-green);
+            color: var(--off-white);
+            padding: 3rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            font-style: italic;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .testimonial footer {
+            margin-top: 1rem;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--accent-gold);
+        }
+
+        /* --- Section: Courses --- */
+        #courses .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .course-card h4 {
+            color: var(--primary-green);
+        }
+
+        .lms-note {
+            padding: 2rem;
+            margin-top: 3rem;
+            border: 2px dashed var(--accent-gold);
+            border-radius: 10px;
+            background-color: #fffaf5;
+            color: var(--primary-green);
+        }
+
+        /* --- Section: Resources --- */
+        #resources {
+            background-color: #f7f7f3;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .blog-post a {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* --- Section: Contact --- */
+        #contact {
+            background-color: var(--primary-green);
+            color: var(--off-white);
+        }
+
+        #contact h2, #contact h3 {
+            color: var(--off-white);
+        }
+
+        .contact-grid {
+            display: flex;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-form-area, .calendly-area {
+            flex: 1;
+        }
+
+        .contact-form-area form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-form-area label {
+            font-weight: 600;
+            color: var(--accent-gold);
+        }
+
+        .contact-form-area input, .contact-form-area textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--off-white);
+            font-family: var(--font-body);
+        }
+
+        .contact-form-area input::placeholder, .contact-form-area textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .calendly-placeholder {
+            min-height: 500px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .calendly-placeholder a {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--text-dark);
+            color: #ccc;
+            text-align: center;
+            padding: 2rem 0;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 992px) {
+            .nav-menu {
+                display: none; /* Simple fixed navigation for this single-file demo */
+            }
+            .header-nav .container {
+                justify-content: center;
+            }
+
+            #about .content-grid, .contact-grid {
+                flex-direction: column;
+            }
+
+            .founder-photo {
+                max-width: 100%;
+            }
+
+            .contact-form-area, .calendly-area {
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .logo-group img {
+                height: 45px; /* Larger size on tablet/desktop */
+            }
+        }
+    </style>
+    <!-- === CSS STYLES END HERE === -->
+</head>
+
+<body>
+    <!-- Header/Navigation Bar -->
+    <header class="header-nav">
+        <div class="container">
+            <a href="#home" class="logo">Quiet Storm</a>
+            <nav class="nav-menu">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#impact">Impact</a>
+                <a href="#courses">Courses</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact" class="cta-button cta-primary" style="margin-left: 2rem;">Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 1. Homepage: The First Impression Expert -->
+    <section id="home">
+        <div class="container">
+            <h1 class="font-bold">Strategic Fundraising and Carbon Advisory for Mission-Driven Organisations.</h1>
+            <p class="sub-headline">Leveraging over a decade of experience to mobilise resources and drive high-impact, tech-enabled solutions that transform service delivery at scale.</p>
+            
+            <div class="cta-group">
+                <a href="#contact" class="cta-button cta-primary">Schedule a Consultation</a>
+                <a href="#courses" class="cta-button cta-secondary">Explore Our Courses</a>
+            </div>
+
+            <!-- Impact Snapshot -->
+            <div class="impact-snapshot">
+                <div class="impact-item">
+                    <strong>Over $30 million</strong>
+                    <span>in funding mobilised</span>
+                </div>
+                <div class="impact-item">
+                    <strong>4 million+</strong>
+                    <span>people impacted across 10 African countries</span>
+                </div>
+                <div class="impact-item">
+                    <strong>$45M</strong>
+                    <span>initiatives catalysed (WASH, Clean Cooking, Energy)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Social Proof Section -->
+    <section class="partner-logos">
+        <div class="container">
+            <p>Past Partners and Donors:</p>
+            <div class="logo-group">
+                <!-- Placeholder logos - use real images or SVGs on deployment -->
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=USAID" onerror="this.src='https://placehold.co/120x40/000/fff?text=USAID'" alt="USAID Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=UKAID" onerror="this.src='https://placehold.co/120x40/000/fff?text=UKAID'" alt="UKAID Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=World+Bank" onerror="this.src='https://placehold.co/120x40/000/fff?text=World+Bank'" alt="World Bank Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=GIZ" onerror="this.src='https://placehold.co/120x40/000/fff?text=GIZ'" alt="GIZ Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=UNICEF" onerror="this.src='https://placehold.co/120x40/000/fff?text=UNICEF'" alt="UNICEF Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=SIDA" onerror="this.src='https://placehold.co/120x40/000/fff?text=SIDA'" alt="SIDA Logo">
+                <img src="https://placehold.co/120x40/0D3B2E/D4AF37?text=Shell+Fdn" onerror="this.src='https://placehold.co/120x40/000/fff?text=Shell+Fdn'" alt="Shell Foundation Logo">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 2. About Us Page: The Relationship Builder -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Building Trust Through Expertise</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">Quiet Storm is driven by a deep commitment to high-impact work and a history of proven success.</p>
+            
+            <div class="content-grid">
+                <div class="founder-photo">
+                    <!-- Placeholder for Christine Muhoro's professional photo -->
+                    <img src="https://placehold.co/350x450/0D3B2E/D4AF37?text=Christine+Muhoro" alt="Christine Muhoro, Founder">
+                </div>
+                <div class="about-text">
+                    <p class="title-gold">Founder's Profile</p>
+                    <h3>Christine Muhoro</h3>
+                    <p>A strategic and mission-driven fundraising and development leader with **10+ years of experience** mobilising resources, driving communications, and leading multi-country programs across Africa.</p>
+                    <p>Christine brings a **rare blend of strategic oversight and operational execution**—she designs the strategy and knows how to make it work on the ground. Her commitment is to **equity-driven, tech-enabled solutions** that transform service delivery at scale.</p>
+                    
+                    <div class="mission-statement">
+                        <h3>Our Philosophy: Quiet, Persistent Excellence</h3>
+                        <p>We empower organisations with the financial and strategic clarity needed to achieve their highest impact goals, navigating the complex landscape of global development funding and climate finance with quiet, persistent excellence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 3. Services Page: The Solutions Expert -->
+    <section id="services" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Our Core Advisory Solutions</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: rgba(255, 255, 255, 0.8);">We structure our offerings around the three critical needs of mission-driven organisations.</p>
+            
+            <div class="services-grid">
+                
+                <!-- Service 1: Grants & Fundraising Strategy -->
+                <div class="service-card">
+                    <h3>1. Grants & Fundraising Strategy</h3>
+                    <p>From pipeline development to final submission, we ensure your proposals are compelling, compliant, and aligned with donor priorities.</p>
+                    <ul>
+                        <li>End-to-end proposal development and grant writing.</li>
+                        <li>Diversifying donor portfolios for long-term sustainability.</li>
+                        <li>Aligning proposals with major donor requirements (USAID, UKAID, etc.).</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2: Carbon Advisory & Climate Finance -->
+                <div class="service-card">
+                    <h3>2. Carbon Advisory & Climate Finance</h3>
+                    <p>Unlock new, sustainable revenue streams by integrating carbon financing into your climate and development projects.</p>
+                    <ul>
+                        <li>Carbon financing integration strategy and pathway planning.</li>
+                        <li>Developing custom carbon impact calculators and models.</li>
+                        <li>Enhancing climate impact positioning for investment readiness.</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3: Strategic Consulting -->
+                <div class="service-card">
+                    <h3>3. Strategic Consulting</h3>
+                    <p>Gain the operational clarity and strategic oversight needed for market expansion and robust program delivery.</p>
+                    <ul>
+                        <li>Consulting for market expansion and technology development.</li>
+                        <li>Expertise in M&E systems and impact measurement.</li>
+                        <li>Development and implementation of Gender Equality and Social Inclusion (GESI) policies.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Impact & Clients Page: The Success Story Specialist -->
+    <section id="impact" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Our Impact: Case Studies</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">We measure success by the capital we mobilize and the number of lives and markets we help transform.</p>
+
+            <div class="case-study-grid">
+                
+                <!-- Case Study 1: d.light experience -->
+                <div class="case-study">
+                    <p class="client-name">Case Study 1: Global Off-Grid Solar Leader</p>
+                    <h3>Unlocking Carbon and Grant Revenue</h3>
+                    <div class="case-details">
+                        <div class="case-detail-box">
+                            <h4>The Problem</h4>
+                            <p>Client needed to expand its grant application pipeline and unlock new revenue from carbon financing to meet ambitious growth targets.</p>
+                        </div>
+                        <div class="case-detail-box">
+                            <h4>The Solution</h4>
+                            <p>Quiet Storm led the global strategy for grants and carbon financing, developed high-value proposals, and forged partnerships with Ministries of Energy.</p>
+                        </div>
+                        <div class="results-box">
+                            <h4>Key Results</h4>
+                            <p><strong>$11M</strong> increase in the grant application pipeline</p>
+                            <p><strong>80%</strong> increase in grant revenue collection</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: BURN Mfg experience -->
+                <div class="case-study">
+                    <p class="client-name">Case Study 2: Leading Clean Cookstove Manufacturer</p>
+                    <h3>Fueling Commercial Scale-Up</h3>
+                    <div class="case-details">
+                        <div class="case-detail-box">
+                            <h4>The Problem</h4>
+                            <p>Required catalytic capital for market expansion and new technology deployment across nine critical African markets.</p>
+                        </div>
+                        <div class="case-detail-box">
+                            <h4>The Solution</h4>
+                            <p>Designed and executed a regional grants fundraising strategy specifically to fuel commercial scale-up and innovation funding.</p>
+                        </div>
+                        <div class="results-box">
+                            <h4>Key Results</h4>
+                            <p>Secured an **$18M** increase in the active grant portfolio</p>
+                            <p>Unlocked **$4M** in grant funding for commercial expansion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Integrated Testimonial -->
+            <blockquote class="testimonial">
+                “Christine’s strategic mind and deep understanding of the donor landscape were transformative. Her ability to translate complex technical concepts into compelling, fundable proposals is unmatched. She is a true partner in impact.”
+                <footer>— Executive Director, Global Energy Access Initiative</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- 5. Courses Page: E-learning Portal -->
+    <section id="courses" class="section-padding text-center">
+        <div class="container">
+            <h2>E-learning Portal: Build In-House Capacity</h2>
+            <p style="max-width: 800px; margin: 0 auto 3rem;">Access Coursera-style online courses designed to transfer our expertise to your team, covering grant management, carbon finance, and GESI compliance.</p>
+            
+            <div class="course-grid">
+                <div class="course-card">
+                    <h4>Grant Management for African NGOs</h4>
+                    <p>Master the grant lifecycle, from compliance and reporting to effective donor stewardship.</p>
+                    <a href="#contact" class="cta-button cta-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <h4>Introduction to Carbon Finance</h4>
+                    <p>Understand how to integrate carbon revenue streams and develop verifiable carbon impact projects.</p>
+                    <a href="#contact" class="cta-button cta-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Enroll Now</a>
+                </div>
+                <div class="course-card">
+                    <h4>Developing GESI-Compliant Proposals</h4>
+                    <p>Ensure your applications meet global standards for Gender Equality and Social Inclusion to secure high-value funding.</p>
+                    <a href="#contact" class="cta-button cta-primary" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Enroll Now</a>
+                </div>
+            </div>
+
+            <div class="lms-note">
+                <p style="font-weight: 700; color: var(--primary-green);">** Note on E-learning Functionality **</p>
+                <p>For a live setup on your custom domain, this area requires a robust CMS (like **WordPress**) integrated with a Learning Management System plugin (e.g., LearnDash or TutorLMS) to handle user accounts, secure payment gateways (PayPal, Flutterwave), and course content delivery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Resources Page: The Thought Leader -->
+    <section id="resources" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Thought Leadership</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem;">We share proprietary insights and analyses to establish authority and improve industry knowledge.</p>
+            
+            <div class="blog-grid">
+                <div class="blog-post">
+                    <p style="font-size: 0.85rem; color: #777;">Clean Energy Policy</p>
+                    <h4>Shaping National Clean Energy Policy: Lessons from the Field</h4>
+                    <p>Analyzing key strategies for private sector engagement in policy development across Sub-Saharan Africa.</p>
+                    <a href="#">Read Article &rarr;</a>
+                </div>
+                <div class="blog-post">
+                    <p style="font-size: 0.85rem; color: #777;">Climate Resilience</p>
+                    <h4>The Role of Carbon Finance in Achieving Climate Resilience</h4>
+                    <p>How carbon markets can provide predictable, long-term funding for climate adaptation and mitigation efforts.</p>
+                    <a href="#">Read Article &rarr;</a>
+                </div>
+                <div class="blog-post">
+                    <p style="font-size: 0.85rem; color: #777;">Donor Engagement</p>
+                    <h4>Best Practices in Donor Engagement and Stewardship</h4>
+                    <p>Tips for moving beyond grant proposals to foster lasting, high-trust partnerships with global foundations and aid agencies.</p>
+                    <a href="#">Read Article &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Contact Page: The Appointment Setter -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="text-center">Start Your Quiet Storm Engagement</h2>
+            <p class="text-center" style="max-width: 700px; margin: 0 auto 3rem; color: rgba(255, 255, 255, 0.8);">We're ready to become your 24/7 sales team member. Connect with us to discuss your strategic needs.</p>
+            
+            <div class="contact-grid">
+                
+                <div class="contact-form-area">
+                    <h3>Direct Inquiry</h3>
+                    <form action="YOUR_FORM_SUBMISSION_ENDPOINT" method="POST">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                        
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" required placeholder="name@organization.org">
+                        
+                        <label for="message">Your Project Goal / Inquiry</label>
+                        <textarea id="message" name="message" rows="6" required placeholder="Briefly describe your funding target or strategic challenge..."></textarea>
+                        
+                        <button type="submit" class="cta-button cta-primary">Submit Inquiry</button>
+                    </form>
+                    
+                    <p style="margin-top: 2rem;">
+                        <a href="mailto:consult@quietstorm.com" style="color: var(--accent-gold); font-weight: 700;">Email: consult@quietstorm.com</a>
+                        <br>
+                        <a href="YOUR_LINKEDIN_PROFILE" target="_blank" style="color: var(--accent-gold); font-weight: 700;">LinkedIn Profile &rarr;</a>
+                    </p>
+                </div>
+                
+                <div class="calendly-area">
+                    <h3>Schedule a Consultation (Frictionless)</h3>
+                    <div class="calendly-placeholder">
+                        <p style="font-weight: 700; font-size: 1.1rem; color: var(--accent-gold);">[Calendly/Booking Integration]</p>
+                        <p style="margin-top: 1rem; color: rgba(255, 255, 255, 0.8);">Integrate your preferred calendar tool here to allow potential clients to book a 30-minute introductory call instantly.</p>
+                        <a href="YOUR_CALENDLY_LINK" target="_blank" class="cta-button cta-primary" style="margin-top: 2rem;">Open Booking Link</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Quiet Storm Fundraising & Carbon Advisory. All Rights Reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </div>
+    </footer>
+
+    <!-- === JAVASCRIPT LOGIC START HERE (formerly script.js) === -->
+    <script>
+        // Simple JS for Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Ignore hash clicks that don't point to a section on this page
+                if (this.getAttribute('href') === '#') return;
+                
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <!-- === JAVASCRIPT LOGIC END HERE === -->
+</body>
+</html>
